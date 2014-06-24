@@ -34,7 +34,7 @@ from zkpylons.lib import auth
 
 from zkpylons.model import Person
 
-from zkpylons.config.lca_info import lca_info, lca_rego, lca_menu, lca_submenus
+from zkpylons.config.lca_info import lca_info, lca_rego, lca_menu, lca_submenus, max_file_upload_bytes
 from zkpylons.config.zkpylons_config import file_paths
 
 from sqlalchemy.orm.util import object_mapper
