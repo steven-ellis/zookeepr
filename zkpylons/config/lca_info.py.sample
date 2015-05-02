@@ -51,6 +51,10 @@ lca_info = {
   'funding_editing' : 'not_open',
   'conference_status': 'open',
   'account_creation': True,
+# Additional status entries from LCA2015
+  'home_graph_bar': False,
+  'home_accommodation_bar': False,
+  'home_sleeps_until': False,
 # Mode
   'cfp_hide_assistance_info': 'no',
   'cfp_hide_assistance_options' : 'no',
@@ -120,6 +124,7 @@ lca_rego = {
                 {'name': 'Usher', 'description': 'Helping manage rooms, get people to seats, etc.'},
                 {'name': 'Registration Desk', 'description': 'Sign people into the conference and help with general enquiries.'},
                 {'name': 'Venue Helper', 'description': 'Help with setting up break times, tables and chairs, and other miscellaneous things.'},
+                {'name': 'Driver', 'description': 'Driving people around the venue and events, or driving a van'},
                 {'name': 'Other', 'description': 'Please provide details in the "Other:" section.'},
             ),
         }
@@ -130,6 +135,7 @@ lca_rego = {
   'vcses' : ['.bak', 'arch', 'bazaar', 'bitkeeper', 'cvs', 'darcs', 'git', 'mercurial', 'monotone', 'perforce', 'rcs', 'sourcesafe', 'subversion'],
   'past_confs' : [('99', '1999 (CALU, Melbourne)'), ('01', '2001 (Sydney)'), ('02', '2002 (Brisbane)'), ('03', '2003 (Perth)'), ('04', '2004 (Adelaide)'), ('05', '2005 (Canberra)'), ('06', '2006 (Dunedin)'), ('07', '2007 (Sydney)'), ('08', '2008 (Melbourne)'), ('09', '2009 (Hobart)'), ('10', '2010 (Wellington)'), ('11', '2011 (Brisbane)'), ('12', '2012 (Ballarat)')],
 
+  'seed' : 0x0F00,
   'silly_description' : {
         'starts' : ["a", "a", "a", "one", "no"], # bias toward "a"
         'adverbs' : ["strongly",
@@ -171,7 +177,18 @@ lca_rego = {
                "neophyte", "expert", "bundle", "package",
                "abstraction", "theorem", "display", "distro",
                "restriction", "device", "function", "reference",
-               "alien"]
+               "alien"],
+       'emoji': ["&#x1F427;", # 0: penguin, too new to be in many unicode fonts
+               "&#x1F357;", # 3: poultry leg
+               "&#x2620;",  # 2: skull and crossbones
+               "&#x1F4A9;", # 1: pile of poo
+               "&#x1F4BB;", # 9: personal computer
+               "&#x1F354;", # 4: hamburger
+               "&#x1F34D;", # 6: pineapple
+               "&#x1F418;", # 5: elephant
+               "&#x1F47E;", # 8: alien monster
+               "&#x1F400;", # 7: rat (note, bigger than a mouse!)
+               ]
     }
 }
 
@@ -205,3 +222,47 @@ lca_submenus = {
   'media': ['News','In the press','Graphics']
 }
 
+news_menu = [
+  ('RSS News Feed', '/media/news/rss'),
+  ('Announcements Mailing List', 'http://lists.linux.org.au/listinfo/lca-announce'),
+  ('@linuxconfau Twitter', 'https://twitter.com/linuxconfau'),
+  ('irc.freenode.net/#linux.conf.au', 'irc://irc.freenode.net:6667/#linux.conf.au'),
+  ('Google +', 'http://linux.conf.au/gplus'),
+]
+
+footer_menu = [
+  ('Home', '/'),
+  ('About', '/about'),
+  ('Programme', '/programme'),
+  ('News', '/news'),
+  ('Sponsors', '/sponsors'),
+  ('FAQ', '/faq'),
+  ('Wiki', '/wiki'),
+]
+
+registration_menu = [
+  ('Registration information', '/'),
+  ('Sign in', '/'),
+  ('Terms and Conditions', '/'),
+  ('Codes of Conduct', '/'),
+  ('Create an account', '/'),
+]
+
+contact_menu = [
+  ('Contact us', '/contact'),
+  ('About our team', '/about/our_team'),
+  ('Google +', 'http://linux.conf.au/gplus'),
+  ('Facebook', '/'),
+  ('Twitter', 'https://twitter.com/linuxconfau'),
+  ('Meetup', 'http://meetup.com/LinuxConfAu')
+# ('Identi.ca', '/'),
+]
+
+sponsor_tiers = [
+    'Emperor',
+    'Other',
+]
+
+photo_galleries = [
+    'Venue',
+]
