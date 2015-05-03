@@ -38,6 +38,7 @@
     <p class="label"><label for="attachment">Attach file:</label></p>
     <p class="entries">${ h.file('attachment', size=50) }</p>
     <p class="note">Any additional information, image, etc. You can attach and delete more files later by editing this proposal.</p>
+    <p class="note">Files must not be bigger than ${ h.bytes_to_human(h.max_file_upload_bytes) }.</p>
 % else:
     <p class="entries">${ h.link_to('Add an attachment', url=h.url_for(action='attach')) } ${ h.hidden('attachment', size=60) }<span class="note">You can attach multiple files by following this link.</span></p>
 % endif

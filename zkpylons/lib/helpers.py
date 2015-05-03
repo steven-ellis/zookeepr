@@ -34,7 +34,7 @@ from zkpylons.lib import auth
 
 from zkpylons.model import Person
 
-from zkpylons.config.lca_info import lca_info, lca_rego, lca_menu, lca_submenus
+from zkpylons.config.lca_info import lca_info, lca_rego, lca_menu, lca_submenus, max_file_upload_bytes
 from zkpylons.config.zkpylons_config import file_paths
 
 from sqlalchemy.orm.util import object_mapper
@@ -464,6 +464,13 @@ def number_to_currency(number, unit='$', precision=2):
 
 def number_to_percentage(number):
     return str(number) + '%'
+
+# http://stackoverflow.com/a/1094933
+def bytes_to_human(number):
+    for x in ['bytes','KB','MB','GB','TB']:
+        if number < 1024.0:
+            return "%3.1f %s" % (number, x)
+        number /= 1024.0
 
 def sales_tax(amount):
     """ Calculate the sales tax that for the supplied amount. """
