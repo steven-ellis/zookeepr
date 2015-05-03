@@ -10,7 +10,8 @@ from zkpylons.model import Invoice, Payment
 from zkpylons.model import SocialNetwork
 from zkpylons.model import FulfilmentType, FulfilmentStatus
 
-from zkpylons.config.lca_info import lca_info
+from zkpylons.config.lca_info import lca_info, max_file_upload_bytes
+import helpers as h
 
 import cgi
 
@@ -95,8 +96,10 @@ class FileUploadValidator(validators.FancyValidator):
         elif isinstance(value, unicode) or isinstance(value, str):
             filename = None
             content = value
-        if len(content) > 3000000: #This is not the right place to validate it, but at least it is validated...
-            raise Invalid('Files must not be bigger than 2MB', value, state)
+        # This is not the right place to validate it, but at least it is validated...
+        if len(content) > max_file_upload_bytes:
+            raise Invalid('Files must not be bigger than {}.'.format(
+                    h.bytes_to_human(max_file_upload_bytes)), value, state)
         return dict(filename=filename, content=content)
 
 class FundingTypeValidator(validators.FancyValidator):

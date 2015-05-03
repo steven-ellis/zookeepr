@@ -85,10 +85,12 @@
     <p class="label"><label for="attachment1">First Character Reference:</label></p>
     <p class="entries">${ h.file('attachment1', size=50) }</p>
     <p class="note">Please upload your first character reference (friend, colleague or employer in the Open Source Community).</p>
+    <p class="note">Files must not be bigger than ${ h.bytes_to_human(h.max_file_upload_bytes) }.</p>
 
     <p class="label"><label for="attachment2">Second Character Reference:</label></p>
     <p class="entries">${ h.file('attachment2', size=50) }</p>
     <p class="note">Please upload your second character reference (friend, colleague or employer in the Open Source Community).</p>
+    <p class="note">Files must not be bigger than ${ h.bytes_to_human(h.max_file_upload_bytes) }.</p>
 % else:
 % if len(c.funding.attachments) > 0:
 <table>
